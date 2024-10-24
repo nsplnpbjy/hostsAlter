@@ -36,7 +36,7 @@ type DNSCheckResponse struct {
 
 func main() {
 	if len(os.Args) != 2 {
-		fmt.Println("Usage: go run main.go <domain>")
+		fmt.Println("Add one domain,like ./hostalter.exe github.com")
 		return
 	}
 	domain := os.Args[1]
@@ -95,7 +95,7 @@ func editHostsFile(hostsPath string, IPList []string, domain string) error {
 		}
 	}
 
-	// 添加新的IP地址和github.com
+	// 添加新的IP地址和domain
 	if len(IPList) > 0 {
 		newLines = append(newLines, fmt.Sprintf("%s %s", IPList[0], domain))
 	}
